@@ -1,3 +1,9 @@
 ﻿{
-  "grettings" :  "This is a NEW beginning! "
+  "grettings": "This is a NEW beginning! ",
+
+  "MyCustomSettings": {
+    "AppName": "DotNetCoreDemo",
+    "AuthKey": "q48sl2lk23d",
+    "MaxItemPerList": 5
+  }
 }
