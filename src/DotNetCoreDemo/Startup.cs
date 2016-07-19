@@ -12,7 +12,8 @@ namespace DotNetCoreDemo
         {
             var buildConfig = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("customConfig.json");
+                .AddJsonFile("customConfig.json")
+                .AddJsonFile("secondConfig.json");
 
             Configuration = buildConfig.Build();
         }
@@ -28,6 +29,7 @@ namespace DotNetCoreDemo
         public void Configure(IApplicationBuilder app)
         {
             var responeGrettings = Configuration["grettings"];
+            var quotesOfTheDay = Configuration["customQuotes"];
 
             app.Run(async (context) =>
             {
