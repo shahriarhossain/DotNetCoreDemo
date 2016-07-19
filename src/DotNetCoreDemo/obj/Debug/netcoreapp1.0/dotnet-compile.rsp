@@ -27,6 +27,8 @@
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.CSharp\4.0.1-rc2-24027\ref\netstandard1.0\Microsoft.CSharp.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.Configuration\1.0.0-rc2-final\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.0.0-rc2-final\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll
+--reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.Configuration.FileExtensions\1.0.0-rc2-final\lib\netstandard1.3\Microsoft.Extensions.Configuration.FileExtensions.dll
+--reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.Configuration.Json\1.0.0-rc2-final\lib\netstandard1.3\Microsoft.Extensions.Configuration.Json.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.0.0-rc2-final\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0-rc2-final\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Extensions.FileProviders.Abstractions\1.0.0-rc2-final\lib\netstandard1.0\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -41,6 +43,7 @@
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Net.Http.Headers\1.0.0-rc2-final\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.VisualBasic\10.0.1-rc2-24027\ref\netstandard1.1\Microsoft.VisualBasic.dll
 --reference:C:\Users\dev_anik\.nuget\packages\Microsoft.Win32.Primitives\4.0.1-rc2-24027\ref\netstandard1.3\Microsoft.Win32.Primitives.dll
+--reference:C:\Users\dev_anik\.nuget\packages\Newtonsoft.Json\8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.AppContext\4.1.0-rc2-24027\ref\netstandard1.5\System.AppContext.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Buffers\4.0.0-rc2-24027\lib\netstandard1.1\System.Buffers.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Collections\4.0.11-rc2-24027\ref\netstandard1.3\System.Collections.dll
@@ -97,6 +100,7 @@
 --reference:C:\Users\dev_anik\.nuget\packages\System.Runtime.InteropServices.PInvoke\4.0.0-rc2-24027\ref\netstandard1.3\System.Runtime.InteropServices.PInvoke.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Runtime.InteropServices.RuntimeInformation\4.0.0-rc2-24027\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Runtime.Numerics\4.0.1-rc2-24027\ref\netstandard1.1\System.Runtime.Numerics.dll
+--reference:C:\Users\dev_anik\.nuget\packages\System.Runtime.Serialization.Primitives\4.1.1-rc2-24027\ref\netstandard1.3\System.Runtime.Serialization.Primitives.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Security.Claims\4.0.1-rc2-24027\ref\netstandard1.3\System.Security.Claims.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Security.Cryptography.Algorithms\4.1.0-rc2-24027\ref\netstandard1.4\System.Security.Cryptography.Algorithms.dll
 --reference:C:\Users\dev_anik\.nuget\packages\System.Security.Cryptography.Encoding\4.0.0-rc2-24027\ref\netstandard1.3\System.Security.Cryptography.Encoding.dll
