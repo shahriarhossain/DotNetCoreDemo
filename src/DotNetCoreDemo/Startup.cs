@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System.Threading.Tasks;
+using System;
 
 namespace DotNetCoreDemo
 {
@@ -42,11 +43,11 @@ namespace DotNetCoreDemo
             var quotesOfTheDay = Configuration["customQuotes"];
 
             #region Middleware
-            app.Use( async (context, next) =>
-            {
-                await context.Response.WriteAsync("First Component in the middleware \n");
-                await next();
-            });
+            app.Use(async (context, next) =>
+           {
+               await context.Response.WriteAsync("First Component in the middleware \n");
+               await next();
+           });
 
             app.Use(async (context, next) =>
             {
@@ -56,6 +57,17 @@ namespace DotNetCoreDemo
 
             app.UseMiddleware<UseCustomThirdComponentMiddleware>();  //Third component in the middleware
             app.UseCustomForthComponentMiddleware();   //Forth component in the middleware, exposing this middleware in a more elegent way
+
+
+            //When url matches with a particular url ('/myTest') format, run the middleware component
+            app.Map("/myTest", builder =>
+            {
+                builder.UseCustomForthComponentMiddleware();   //middleware component
+            });
+
+            //When a particular url matches certain rule call this middleware
+            app.MapWhen(context => { return context.Request.Query.ContainsKey("SomeText"); }, customMapWhenHandler);
+
 
             app.Run(async (context) =>
             {
@@ -70,6 +82,17 @@ namespace DotNetCoreDemo
             });
 
             #endregion Middleware       
+        }
+
+        private void customMapWhenHandler(IApplicationBuilder app)
+        {  
+            //app.Run(async context =>
+            //{
+            //    await context.Response.WriteAsync("\nComponent that demonstrate the power of MapWhen functionality\n");
+            //});       
+
+            //alternatively we can also call the middleware directly
+            app.UseMiddleware<UseCustomHandlerForMapWhenFeature>();
         }
     }
 
@@ -108,6 +131,21 @@ namespace DotNetCoreDemo
             await next.Invoke(context); //alternatively we can call : await next(context);   both are same
         }
     }
+
+    public class UseCustomHandlerForMapWhenFeature
+    {
+        private RequestDelegate next { get; set; }
+        public UseCustomHandlerForMapWhenFeature(RequestDelegate _next)
+        {
+            next = _next;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            await context.Response.WriteAsync("\nComponent that demonstrate the power of MapWhen functionality\n");
+            await next.Invoke(context);
+        }
+    }
     #endregion Custom Middleware
 
     #region Middleware Extensions
@@ -119,6 +157,4 @@ namespace DotNetCoreDemo
         }
     }
     #endregion Middleware Extensions
-
-
 }
