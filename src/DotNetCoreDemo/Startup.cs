@@ -105,7 +105,7 @@ namespace DotNetCoreDemo
         public async Task Invoke(HttpContext context)
         {
             await context.Response.WriteAsync("\nForth Component in the middleware \n");
-            await next(context);
+            await next.Invoke(context); //alternatively we can call : await next(context);   both are same
         }
     }
     #endregion Custom Middleware
