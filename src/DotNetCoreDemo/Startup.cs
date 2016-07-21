@@ -50,15 +50,16 @@ namespace DotNetCoreDemo
 
             app.Use(async (context, next) =>
             {
-                await context.Response.WriteAsync("Second Component in the middleware \n");
+                await context.Response.WriteAsync("\nSecond Component in the middleware \n");
                 await next();
             });
 
-            app.UseMiddleware<UseCustomSecondComponentMiddleware>();
+            app.UseMiddleware<UseCustomThirdComponentMiddleware>();  //Third component in the middleware
+            app.UseCustomForthComponentMiddleware();   //Forth component in the middleware, exposing this middleware in a more elegent way
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(responeGrettings); //Forth component in the middleware
+                await context.Response.WriteAsync(responeGrettings);  ////Fifth component in the middleware
             });
 
             app.Use(async (context, next) =>
@@ -73,11 +74,11 @@ namespace DotNetCoreDemo
     }
 
     #region Custom Middleware
-    public class UseCustomSecondComponentMiddleware
+    public class UseCustomThirdComponentMiddleware
     {
         private RequestDelegate next { get; set; }
 
-        public UseCustomSecondComponentMiddleware(RequestDelegate _next)
+        public UseCustomThirdComponentMiddleware(RequestDelegate _next)
         {
             next = _next;
         }
@@ -91,7 +92,33 @@ namespace DotNetCoreDemo
 
 
     }
+
+    public class UseCustomForthComponentMiddleware
+    {
+        private RequestDelegate next { get; set; }
+
+        public UseCustomForthComponentMiddleware(RequestDelegate _next)
+        {
+            next = _next;
+        }
+
+        public async Task Invoke(HttpContext context)
+        {
+            await context.Response.WriteAsync("\nForth Component in the middleware \n");
+            await next(context);
+        }
+    }
     #endregion Custom Middleware
+
+    #region Middleware Extensions
+    public static class MiddlewareExtension
+    {
+        public static IApplicationBuilder UseCustomForthComponentMiddleware(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<UseCustomForthComponentMiddleware>();
+        }
+    }
+    #endregion Middleware Extensions
 
 
 }
