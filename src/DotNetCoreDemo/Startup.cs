@@ -19,6 +19,11 @@ namespace DotNetCoreDemo
                 .AddJsonFile("customConfig.json")
                 .AddJsonFile("secondConfig.json");
 
+            if (env.IsDevelopment())
+            {
+                buildConfig.AddUserSecrets();
+            }
+
             Configuration = buildConfig.Build();
         }
 
@@ -41,7 +46,7 @@ namespace DotNetCoreDemo
             var appName2 = Configuration.GetValue<string>("customConfig:AppName"); //this does not work :(
             var responeGrettings = Configuration["grettings"];
             var quotesOfTheDay = Configuration["customQuotes"];
-
+            string MailChimpKey = Configuration["MailChimpApiKey"]; //User Secrets
             #region Middleware
             app.Use(async (context, next) =>
            {

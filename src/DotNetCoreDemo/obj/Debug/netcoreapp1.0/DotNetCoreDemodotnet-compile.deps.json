@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "9b15fa3e985d875294ac196fb36b54702a81676d"
+    "signature": "282e68d559e62474a71a649dc4ee490db9e786c0"
   },
   "compilationOptions": {
     "defines": [
@@ -21,7 +21,9 @@
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
           "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-rc2-final",
           "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final"
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final",
+          "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview1-final"
         },
         "compile": {
           "DotNetCoreDemo.dll": {}
@@ -269,6 +271,18 @@
           "ref/netstandard1.0/Microsoft.CSharp.dll": {}
         }
       },
+      "Microsoft.Extensions.CommandLineUtils/1.0.0-rc2-final": {
+        "dependencies": {
+          "System.Collections": "4.0.11-rc2-24027",
+          "System.Console": "4.0.0-rc2-24027",
+          "System.IO": "4.1.0-rc2-24027",
+          "System.Linq": "4.1.0-rc2-24027",
+          "System.Resources.ResourceManager": "4.0.1-rc2-24027"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.CommandLineUtils.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/1.0.0-rc2-final": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc2-final",
@@ -323,6 +337,14 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.UserSecrets/1.0.0-rc2-final": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/1.0.0-rc2-final": {
@@ -478,6 +500,20 @@
         },
         "compile": {
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Extensions.SecretManager.Tools/1.0.0-preview1-final": {
+        "dependencies": {
+          "Microsoft.Extensions.CommandLineUtils": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc2-final",
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702",
+          "Newtonsoft.Json": "8.0.3",
+          "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/dotnet-user-secrets.dll": {}
         }
       },
       "Microsoft.Net.Http.Headers/1.0.0-rc2-final": {
@@ -1912,7 +1948,9 @@
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
           "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-rc2-final",
           "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final"
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final",
+          "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview1-final"
         },
         "runtime": {
           "DotNetCoreDemo.dll": {}
@@ -2125,16 +2163,25 @@
           "System.Xml.XDocument": "4.0.11-rc2-24027",
           "System.Xml.XPath.XDocument": "4.0.1-rc2-24027",
           "System.Xml.XmlDocument": "4.0.1-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp/1.3.0-beta1-20160429-01": {
         "dependencies": {
           "Microsoft.CodeAnalysis.Common": "1.3.0-beta1-20160429-01"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.VisualBasic/1.3.0-beta1-20160429-01": {
         "dependencies": {
           "Microsoft.CodeAnalysis.Common": "1.3.0-beta1-20160429-01"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.VisualBasic.dll": {}
         }
       },
       "Microsoft.CSharp/4.0.1-rc2-24027": {
@@ -2155,6 +2202,21 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Runtime.InteropServices": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.Extensions.CommandLineUtils/1.0.0-rc2-final": {
+        "dependencies": {
+          "System.Collections": "4.0.11-rc2-24027",
+          "System.Console": "4.0.0-rc2-24027",
+          "System.IO": "4.1.0-rc2-24027",
+          "System.Linq": "4.1.0-rc2-24027",
+          "System.Resources.ResourceManager": "4.0.1-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.CommandLineUtils.dll": {}
         }
       },
       "Microsoft.Extensions.Configuration/1.0.0-rc2-final": {
@@ -2211,6 +2273,14 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.Extensions.Configuration.Json.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.UserSecrets/1.0.0-rc2-final": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Extensions.Configuration.UserSecrets.dll": {}
         }
       },
       "Microsoft.Extensions.DependencyInjection/1.0.0-rc2-final": {
@@ -2368,6 +2438,20 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
+      "Microsoft.Extensions.SecretManager.Tools/1.0.0-preview1-final": {
+        "dependencies": {
+          "Microsoft.Extensions.CommandLineUtils": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final",
+          "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
+          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc2-final",
+          "Microsoft.NETCore.App": "1.0.0-rc2-3002702",
+          "Newtonsoft.Json": "8.0.3",
+          "System.Runtime.Serialization.Primitives": "4.1.1-rc2-24027"
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/dotnet-user-secrets.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0-rc2-final": {
         "dependencies": {
           "System.Buffers": "4.0.0-rc2-24027",
@@ -2474,6 +2558,9 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Runtime.InteropServices": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.VisualBasic.dll": {}
         }
       },
       "Microsoft.Win32.Primitives/4.0.1-rc2-24027": {
@@ -2595,6 +2682,9 @@
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Collections.Immutable.dll": {}
         }
       },
       "System.Collections.NonGeneric/4.0.1-rc2-24027": {
@@ -2605,6 +2695,9 @@
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
       "System.Collections.Specialized/4.0.1-rc2-24027": {
@@ -2616,6 +2709,9 @@
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
       "System.ComponentModel/4.0.1-rc2-24027": {
@@ -2639,6 +2735,9 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Text.RegularExpressions": "4.0.12-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.4/System.ComponentModel.Annotations.dll": {}
         }
       },
       "System.ComponentModel.Primitives/4.0.1-rc2-24027": {
@@ -2830,6 +2929,9 @@
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Text.Encoding": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1-rc2-24027": {
@@ -2893,6 +2995,9 @@
           "System.Runtime.InteropServices": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Threading.Tasks": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.IO.UnmanagedMemoryStream.dll": {}
         }
       },
       "System.Linq/4.1.0-rc2-24027": {
@@ -2943,6 +3048,9 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Threading.Tasks": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Linq.Parallel.dll": {}
         }
       },
       "System.Linq.Queryable/4.0.1-rc2-24027": {
@@ -2955,6 +3063,9 @@
           "System.Reflection.Extensions": "4.0.1-rc2-24027",
           "System.Resources.ResourceManager": "4.0.1-rc2-24027",
           "System.Runtime": "4.1.0-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Linq.Queryable.dll": {}
         }
       },
       "System.Net.Http/4.0.1-rc2-24027": {
@@ -2983,6 +3094,9 @@
           "runtime.native.System": "4.0.0-rc2-24027",
           "runtime.native.System.Net.Http": "4.0.1-rc2-24027",
           "runtime.native.System.Security.Cryptography": "4.0.0-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.4/System.Net.Http.dll": {}
         }
       },
       "System.Net.NameResolution/4.0.0-rc2-24027": {
@@ -3067,6 +3181,9 @@
           "System.Resources.ResourceManager": "4.0.1-rc2-24027",
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Runtime.Extensions": "4.1.0-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
         }
       },
       "System.Net.WebSockets/4.0.0-rc2-24027": {
@@ -3122,6 +3239,9 @@
           "System.Resources.ResourceManager": "4.0.1-rc2-24027",
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Reflection.DispatchProxy.dll": {}
         }
       },
       "System.Reflection.Emit/4.0.1-rc2-24027": {
@@ -3180,6 +3300,9 @@
           "System.Text.Encoding": "4.0.11-rc2-24027",
           "System.Text.Encoding.Extensions": "4.0.11-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.1/System.Reflection.Metadata.dll": {}
         }
       },
       "System.Reflection.Primitives/4.0.1-rc2-24027": {
@@ -3203,6 +3326,9 @@
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Text.Encoding": "4.0.11-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Resources.Reader.dll": {}
         }
       },
       "System.Resources.ResourceManager/4.0.1-rc2-24027": {
@@ -3251,6 +3377,9 @@
           "System.IO": "4.1.0-rc2-24027",
           "System.Reflection": "4.1.0-rc2-24027",
           "System.Runtime": "4.1.0-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.5/System.Runtime.Loader.dll": {}
         }
       },
       "System.Runtime.Numerics/4.0.1-rc2-24027": {
@@ -3477,6 +3606,9 @@
           "System.Runtime": "4.1.0-rc2-24027",
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Text.RegularExpressions.dll": {}
         }
       },
       "System.Threading/4.0.11-rc2-24027": {
@@ -3513,6 +3645,9 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Threading.Tasks": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.1/System.Threading.Tasks.Dataflow.dll": {}
         }
       },
       "System.Threading.Tasks.Extensions/4.0.0-rc2-24027": {
@@ -3535,6 +3670,9 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Threading.Tasks": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Threading.Tasks.Parallel.dll": {}
         }
       },
       "System.Threading.Thread/4.0.0-rc2-24027": {
@@ -3576,6 +3714,9 @@
           "System.Text.RegularExpressions": "4.0.12-rc2-24027",
           "System.Threading.Tasks": "4.0.11-rc2-24027",
           "System.Threading.Tasks.Extensions": "4.0.0-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.ReaderWriter.dll": {}
         }
       },
       "System.Xml.XDocument/4.0.11-rc2-24027": {
@@ -3592,6 +3733,9 @@
           "System.Text.Encoding": "4.0.11-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Xml.ReaderWriter": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
       "System.Xml.XmlDocument/4.0.1-rc2-24027": {
@@ -3606,6 +3750,9 @@
           "System.Text.Encoding": "4.0.11-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Xml.ReaderWriter": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
       "System.Xml.XPath/4.0.1-rc2-24027": {
@@ -3619,6 +3766,9 @@
           "System.Runtime.Extensions": "4.1.0-rc2-24027",
           "System.Threading": "4.0.11-rc2-24027",
           "System.Xml.ReaderWriter": "4.0.11-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XPath.dll": {}
         }
       },
       "System.Xml.XPath.XDocument/4.0.1-rc2-24027": {
@@ -3632,6 +3782,9 @@
           "System.Xml.ReaderWriter": "4.0.11-rc2-24027",
           "System.Xml.XDocument": "4.0.11-rc2-24027",
           "System.Xml.XPath": "4.0.1-rc2-24027"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       }
     }
@@ -3727,6 +3880,11 @@
       "serviceable": true,
       "sha512": "sha512-P6MB1bNnyy4PizG4ewY0z2FP7R2kI3g/nB5qTF3rh75JXPekaJiDFPd+34uymg/5xtjllwCyM2RtVxaOhnRAPA=="
     },
+    "Microsoft.Extensions.CommandLineUtils/1.0.0-rc2-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W27sd1qlG76lEs/TD6PUJKcJJ572v/WrMtHq8VrHKOcI7NwkTgOaayt+/Mh6Zr7a+EIAAITPOFjKjUiPDEPn+g=="
+    },
     "Microsoft.Extensions.Configuration/1.0.0-rc2-final": {
       "type": "package",
       "serviceable": true,
@@ -3751,6 +3909,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-1Y/3qSjHpuaLeyja+gSAZUtdj503tbc23699YzE8DxWMZ3urDztdpdWy0CFGGES15obfmsrm+oBxzEwtiHKPTw=="
+    },
+    "Microsoft.Extensions.Configuration.UserSecrets/1.0.0-rc2-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UAj6RZp2uSDc+XJvlPJGScVH+LtOiJaRxXhFPTBy38vfLf4B+5bqpaiHwSjl01HbyT0V4Iy7tiI9EdTfTEspgA=="
     },
     "Microsoft.Extensions.DependencyInjection/1.0.0-rc2-final": {
       "type": "package",
@@ -3811,6 +3974,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-5lXETW9MI0CIOOCtgeJcrX3jODcFkX04tr+K/MB+cRspPvYD3URbf4MRIwWgI5r7cu+8+efPxEH0tG1g8ldhQA=="
+    },
+    "Microsoft.Extensions.SecretManager.Tools/1.0.0-preview1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4Q3USE6dp4hf1zYiIJPz+24ecCjJ7IsnoXm75TdbCEP1dVtgVe3NyAg6GDrflfE343o9p4b+sevNLT0nQk9NhA=="
     },
     "Microsoft.Net.Http.Headers/1.0.0-rc2-final": {
       "type": "package",
